@@ -5,6 +5,7 @@ import Cta from "@/layouts/components/Cta.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
 
 const homepage = (await getEntry(
   "homepage",
@@ -28,7 +29,10 @@ const { banner, about, feature, services, workflow, call_to_action } = homepage.
 
           {
             banner?.button?.enable && (
-              <a class="btn btn-primary mt-4" href={banner.button.link}>
+              <a class="btn btn-primary mt-4 inline-flex items-center gap-2" href={banner.button.link}
+            target="_blank"
+            >
+                <WhatsAppIcon />
                 {banner.button.label}
               </a>
             )
@@ -64,9 +68,12 @@ const { banner, about, feature, services, workflow, call_to_action } = homepage.
 
           {
             banner?.button?.enable && (
-              <a class="btn btn-primary mt-4" href={banner.button.link}>
-                {banner.button.label}
-              </a>
+            <a class="btn btn-primary mt-4 inline-flex items-center gap-2" href={banner.button.link}
+            target="_blank"
+            >
+              <WhatsAppIcon />
+              {banner.button.label}
+            </a>
             )
           }
         </div>
@@ -88,13 +95,16 @@ const { banner, about, feature, services, workflow, call_to_action } = homepage.
                     <div class="swiper-wrapper">
                       {service.images?.map((image) => (
                         <div class="swiper-slide">
-                          <Image
-                            class="mx-auto"
-                            src={image}
-                            width={538}
-                            height={328}
-                            alt=""
-                          />
+                          <figure class="mx-auto aspect-[3/4] w-[269px] overflow-hidden">
+                            <Image
+                              class="mx-auto"
+                              src={image}
+                              width={269}
+                              height={358.5}
+                              alt=""
+                              class="h-full w-full object-cover"
+                            />
+                          </figure>
                         </div>
                       ))}
                     </div>

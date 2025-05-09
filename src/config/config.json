@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "RefugiaDogs",
+    "title": "REFUGIADOGS",
     "base_url": "https://bigspring-light-astro.vercel.app",
     "base_path": "/",
     "trailing_slash": false,
@@ -8,7 +8,7 @@
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "38",
-    "logo_text": "RefugiaDogs"
+    "logo_text": "REFUGIADOGS"
   },
 
   "settings": {
@@ -19,14 +19,14 @@
   "nav_button": {
     "enable": true,
     "label": "Contactanos",
-    "link": "/contact"
+    "link": "https://wa.me/5214422464270"
   },
 
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "En RefugiaDogs, tu mascota es parte de nuestra familia. Atención veterinaria con amor, experiencia y compromiso.",
-    "copyright": "RefugiaDogs © 2025"
+    "footer_content": "En REFUGIADOGS, tu mascota es parte de nuestra familia. Atención veterinaria con amor, experiencia y compromiso.",
+    "copyright": "REFUGIADOGS © 2025"
   },
 
   "metadata": {

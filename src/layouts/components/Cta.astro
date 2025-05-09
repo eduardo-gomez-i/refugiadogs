@@ -4,6 +4,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 import config from "@/config/config.json";
+import WhatsAppIcon from '../../components/WhatsAppIcon.astro';
 
 const { cta } = Astro.props;
 const entry = (await getEntry(
@@ -66,7 +67,8 @@ const { title, description, info } = entry.data;
             <div class="text-center">
               <p set:html={markdownify(cta?.content)} />
               {cta.button.enable && (
-                <a class="btn btn-primary mt-4" href={cta.button.link} target="_blank">
+                <a class="btn btn-primary mt-4 inline-flex items-center gap-2" href={cta.button.link} target="_blank">
+                  <WhatsAppIcon />
                   {cta.button.label}
                 </a>
               )}

@@ -2,6 +2,7 @@
 import Logo from "@/components/Logo.astro";
 import { nav_button } from "@/config/config.json";
 import menu from "@/config/menu.json";
+import WhatsAppIcon from '../../components/WhatsAppIcon.astro';
 
 const pathname = Astro.url.pathname;
 
@@ -20,7 +21,7 @@ export interface NavigationLink {
 const { main }: { main: NavigationLink[] } = menu;
 ---
 
-<header class="header">
+<header class="header sticky top-0 z-50 bg-white">
   <nav class="navbar container">
     <!-- logo -->
     <div class="order-0">
@@ -114,9 +115,11 @@ const { main }: { main: NavigationLink[] } = menu;
       nav_button.enable && (
         <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 md:flex md:min-w-[150px] lg:min-w-[200px]">
           <a
-            class="btn btn-primary z-0 ml-auto py-[14px]"
+            class="btn btn-primary z-0 ml-auto py-[14px] inline-flex items-center gap-2"
             href={nav_button.link}
+            target="_blank"
           >
+                <WhatsAppIcon />
             {nav_button.label}
           </a>
         </div>

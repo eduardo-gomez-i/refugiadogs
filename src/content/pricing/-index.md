@@ -13,7 +13,7 @@ plans:
     - Time-Critical Services
   button:
     label: Get started for free
-    link: "/contact"
+    link: "https://wa.me/5214422464270"
 
 - title: Professional Plan
   subtitle: Best For Professionals
@@ -28,7 +28,7 @@ plans:
     - Best Dashboard
   button:
     label: Get started
-    link: "/contact"
+    link: "https://wa.me/5214422464270"
 
 - title: Business Plan
   subtitle: Best For Large Individuals
@@ -40,7 +40,7 @@ plans:
     - Time-Critical Services
   button:
     label: Get started
-    link: "/contact"
+    link: "https://wa.me/5214422464270"
 
 call_to_action:
   title: Need a larger plan?
