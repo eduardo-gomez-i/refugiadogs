@@ -10,7 +10,7 @@ const homepage = (await getEntry(
   "homepage",
   "-index"
 )) as CollectionEntry<"homepage">;
-const { banner, feature, services, workflow, call_to_action } = homepage.data;
+const { banner, about, feature, services, workflow, call_to_action } = homepage.data;
 ---
 
 <Base>
@@ -50,37 +50,31 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section bg-light">
+  <!-- about -->
+  <section class="section bg-light pb-[50px]">
     <div class="container">
-      <div class="text-center">
-        <h2>{markdownify(feature.title)}</h2>
-      </div>
-      <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-        {
-          feature.features.map((item) => (
-            <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
-              {item.icon && (
-                <Image
-                  class="mx-auto"
-                  alt={item.icon}
-                  src={item.icon}
-                  width={30}
-                  height={30}
-                />
-              )}
-              <div class="mt-4">
-                <p class="h5" set:html={markdownify(item.name)} />
-                <p class="mt-3">{item.content}</p>
-              </div>
-            </div>
-          ))
-        }
+      <div class="row text-center">
+        <div class="mx-auto lg:col-10">
+          <h1 class="font-primary font-bold">{about?.title}</h1>
+          {
+            banner?.content && (
+              <p class="mt-4" set:html={markdownify(about.description)} />
+            )
+          }
+
+          {
+            banner?.button?.enable && (
+              <a class="btn btn-primary mt-4" href={banner.button.link}>
+                {banner.button.label}
+              </a>
+            )
+          }
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+    <!-- Services -->
   {
     services!.map((service, index) => {
       const isOdd = index % 2 > 0;
@@ -147,8 +141,39 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
   }
   <!-- /End service -->
 
+  <!-- Features -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2>{markdownify(feature.title)}</h2>
+        <p class="mt-4" set:html={markdownify(feature.content)} />
+      </div>
+      <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          feature.features.map((item) => (
+            <div class="feature-card rounded-xl bg-white p-5 pb-8 text-center">
+              {item.icon && (
+                <Image
+                  class="mx-auto"
+                  alt={item.icon}
+                  src={item.icon}
+                  width={30}
+                  height={30}
+                />
+              )}
+              <div class="mt-4">
+                <p class="h5" set:html={markdownify(item.name)} />
+                <p class="mt-3">{item.content}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Workflow -->
-  <section class="section pb-0">
+  <!-- <section class="section pb-0">
     <div class="mb-8 text-center">
       <h2
         class="mx-auto max-w-[400px] font-bold leading-[44px]"
@@ -162,7 +187,7 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
       width={1920}
       height={414}
     />
-  </section>
+  </section> -->
 
   <!-- Call to Action -->
   <Cta cta={call_to_action} />
